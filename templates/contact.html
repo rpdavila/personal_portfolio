@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="img">
+  <div class="form-wrapper">
+    <fieldset>
+    <legend class="legend">Contact Me</legend>
+      <form method="POST" action="">
+          {{ form.csrf_token }}
+        <div class="name">
+          {{ form.name.label }}
+            {% if form.name.errors %}
+              {{ form.name }}
+              <div class="error">
+                {% for error in form.name.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.name }}
+            {% endif %}
+        </div>
+        <div class="email">
+          {{ form.email.label }}
+            {% if form.email.errors %}
+              {{ form.email }}
+              <div class="error">
+                {% for error in form.email.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.email }}
+            {% endif %}
+        </div>
+        <div class="body">
+          {{ form.body.label }}
+            {% if form.body.errors %}
+              {{ form.body }}
+              <div class="error">
+                {% for error in form.body.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.body }}
+            {% endif %}
+        </div>
+        <div class="button">
+          {{ form.submit }}
+        </div>
+      </form>
+    </fieldset>
+  </div>
+
+</div>
+{% endblock content %}

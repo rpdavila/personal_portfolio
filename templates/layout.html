@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@521&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+      <nav  class="nav_bar_nav sticky">
+        <ul class="link_list">
+          <li class="nav-links"><a href={{ url_for("home") }}>Home</a></li>
+          <li class="nav-links"><a href={{ url_for("contact") }}>Contact</a></li>
+          <li class="nav-links"><a href={{ url_for("projects") }}>Projects</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="content">
+      {% block content %}{% endblock content %}
+  </div>
+  <footer class="footer">
+    <div class="programming-container">
+      <ul class="programming-logos">
+        <li class="img1">img</li>
+        <li class="img2">img</li>
+        <li class="img3">img</li>
+        <li class="img4">img</li>
+        <li class="img5">img</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
