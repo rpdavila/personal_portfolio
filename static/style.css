@@ -100,9 +100,8 @@ body {
 }
 
 .form-wrapper {
-    grid-column: 4 / 6;
+    grid-column: 2 / 4;
     margin-top: 100px;
-    margin-right: 20px;
     height: 500px;
 
 }
@@ -202,24 +201,27 @@ footer {
     padding: 10px;
 }
  .skill-img-css {
-     justify-content: center;
+     grid-column-start: 9;
      background-color: #8EBDD4;
      border-radius: 10px;
      padding: 10px;
  }
 
  .skill-img-fl {
+     grid-column-start: 12;
      background-color: #8EBDD4;
      border-radius: 10px;
      padding: 10px;
  }
 
  .skill-img-js {
+     grid-column-start: 10;
      background-color: #8EBDD4;
      border-radius: 10px;
      padding: 10px;
  }
 .skill-img-py {
+    grid-column-start: 11;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
