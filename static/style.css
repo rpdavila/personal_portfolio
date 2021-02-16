@@ -101,7 +101,7 @@ body {
 
 .form-wrapper {
     grid-column: 4 / 6;
-    margin-top: 170px;
+    margin-top: 100px;
     margin-right: 20px;
     height: 500px;
 
@@ -188,14 +188,39 @@ footer {
 }
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    align-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     grid-gap: 10px;
+    align-content: center;
     height: 100px;
     width: 100%;
 }
-
+/*footer logos*/
 .skill-img-html {
-    grid-column-start: 13;
+    grid-column-start: 8;
+    background-color: #8EBDD4;
+    border-radius: 10px;
+    padding: 10px;
 }
+ .skill-img-css {
+     justify-content: center;
+     background-color: #8EBDD4;
+     border-radius: 10px;
+     padding: 10px;
+ }
 
+ .skill-img-fl {
+     background-color: #8EBDD4;
+     border-radius: 10px;
+     padding: 10px;
+ }
+
+ .skill-img-js {
+     background-color: #8EBDD4;
+     border-radius: 10px;
+     padding: 10px;
+ }
+.skill-img-py {
+    background-color: #8EBDD4;
+    border-radius: 10px;
+    padding: 10px;
+}
