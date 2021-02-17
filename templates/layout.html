@@ -17,14 +17,9 @@
           <li class="nav-links"><a href={{ url_for("home") }}>Home</a></li>
           <li class="nav-links"><a href={{ url_for("contact") }}>Contact</a></li>
           <li class="nav-links"><a href={{ url_for("projects") }}>Projects</a></li>
-          </ul>
+        </ul>
       </nav>
     </div>
-    <div class="main" >
-      <div class="scrim">
-        <p>Welcome!, Let me guide you in your solutions journey!</p>
-    </div>
-</div>
   </header>
   <div class="content">
       {% block content %}{% endblock content %}
@@ -36,6 +31,9 @@
         <div class="skill-img-js"><img src="{{ url_for('static', filename='js.png') }}" alt="Java Script" style="width: 40px; height: 40px"></div>
         <div class="skill-img-py"><img src="{{ url_for('static', filename='python.png') }}" alt="Python" style="width: 40px; height: 40px"></div>
         <div class="skill-img-fl"><img src="{{ url_for('static', filename='flask.png') }}" alt="Flask" style="width: 40px; height: 40px"></div>
+    </div>
+    <div class="copyright">
+      <p>&copy Copyright 2021, Designed by Rafael Pietri-Davila, Using the Flask Framework.</p>
     </div>
   </footer>
 </body>

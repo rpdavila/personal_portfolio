@@ -16,8 +16,8 @@ body {
     justify-content: flex-end;
     align-content: space-around;
     position: fixed;
-    width: 100%;
     list-style-type: none;
+    width: 100%;
     margin: 0;
     padding: 0;
     background-color: #02334B;
@@ -47,7 +47,7 @@ body {
     justify-content: center;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("homepage.jpg");
     background-size: cover;
-    height: 30vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -58,6 +58,8 @@ body {
     justify-content: center;
     font-family: 'Dancing Script', cursive;
     font-size: 4rem;
+    margin-top: 20px;
+    text-shadow: 1px 1px black;
     color: #f0f8ff;
 }
 
@@ -67,10 +69,12 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
     height: 560px;
+    width: 100%;
 }
 
 .description {
     grid-column: 1 / 3;
+    max-height: 500px;
 }
 
 .description section p {
@@ -188,6 +192,7 @@ footer {
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    grid-template-rows: fit-content(100%);
     grid-gap: 10px;
     align-content: center;
     height: 100px;
@@ -226,3 +231,7 @@ footer {
     border-radius: 10px;
     padding: 10px;
 }
+
+/*.copyright {*/
+/*    grid-row: 2;*/
+/*}*/
