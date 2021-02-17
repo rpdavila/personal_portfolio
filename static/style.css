@@ -193,45 +193,50 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     grid-template-rows: fit-content(100%);
-    grid-gap: 10px;
+    grid-auto-flow: row;
+    grid-gap: 2px;
     align-content: center;
-    height: 100px;
+    height: 110px;
     width: 100%;
 }
 /*footer logos*/
 .skill-img-html {
-    grid-column-start: 8;
+    grid-column-start: 9;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
- .skill-img-css {
-     grid-column-start: 9;
-     background-color: #8EBDD4;
-     border-radius: 10px;
-     padding: 10px;
- }
+.skill-img-css {
+ grid-column-start: 10;
+ background-color: #8EBDD4;
+ border-radius: 10px;
+ padding: 10px;
+}
 
- .skill-img-fl {
-     grid-column-start: 12;
-     background-color: #8EBDD4;
-     border-radius: 10px;
-     padding: 10px;
- }
+.skill-img-js {
+ grid-column-start: 11;
+ background-color: #8EBDD4;
+ border-radius: 10px;
+ padding: 10px;
+}
 
- .skill-img-js {
-     grid-column-start: 10;
-     background-color: #8EBDD4;
-     border-radius: 10px;
-     padding: 10px;
- }
 .skill-img-py {
-    grid-column-start: 11;
+    grid-column-start: 12;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
 
-/*.copyright {*/
-/*    grid-row: 2;*/
-/*}*/
+.skill-img-fl {
+ grid-column-start: 13;
+ background-color: #8EBDD4;
+ border-radius: 10px;
+ padding: 10px;
+}
+
+
+.copyright {
+    grid-column: 8 / 15;
+    color: #F0F8FF;
+    align-items: center;
+}
