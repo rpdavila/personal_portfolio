@@ -183,7 +183,7 @@ textarea {
 /*footer*/
 
 footer {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
     height: 100px;
@@ -191,47 +191,47 @@ footer {
 }
 .footer-container {
     display: grid;
+    grid-column-start: auto;
+    justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    grid-template-rows: fit-content(100%);
     grid-auto-flow: row;
     grid-gap: 2px;
-    align-content: center;
     height: 110px;
     width: 100%;
 }
 /*footer logos*/
 .skill-img-html {
-    grid-column-start: 9;
+    grid-column: 9;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
 .skill-img-css {
- grid-column-start: 10;
- background-color: #8EBDD4;
- border-radius: 10px;
- padding: 10px;
+    grid-column: 10;
+    background-color: #8EBDD4;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .skill-img-js {
- grid-column-start: 11;
- background-color: #8EBDD4;
- border-radius: 10px;
- padding: 10px;
+    grid-column: 11;
+    background-color: #8EBDD4;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .skill-img-py {
-    grid-column-start: 12;
+    grid-column: 12;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
 
 .skill-img-fl {
- grid-column-start: 13;
- background-color: #8EBDD4;
- border-radius: 10px;
- padding: 10px;
+    grid-column: 13;
+    background-color: #8EBDD4;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 
