@@ -64,10 +64,10 @@ body {
 }
 
 /*home-page body*/
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
+.flex {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
     height: 560px;
     width: 100%;
 }
@@ -95,8 +95,7 @@ body {
 /*contact form*/
 
 .contact_background {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
     justify-content: center;
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("collaboration.jpg") no-repeat;
@@ -104,7 +103,7 @@ body {
 }
 
 .form-wrapper {
-    grid-column: 2 / 4;
+    grid-column: auto;
     margin-top: 100px;
     height: 500px;
 
@@ -183,7 +182,7 @@ textarea {
 /*footer*/
 
 footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
     height: 100px;
@@ -191,44 +190,44 @@ footer {
 }
 .footer-container {
     display: grid;
-    grid-column-start: auto;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    grid-auto-flow: row;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px;
+    align-items: center;
     grid-gap: 2px;
     height: 110px;
     width: 100%;
 }
 /*footer logos*/
 .skill-img-html {
-    grid-column: 9;
+    grid-column: 2;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
 .skill-img-css {
-    grid-column: 10;
+    grid-column: auto;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
 
 .skill-img-js {
-    grid-column: 11;
+    grid-column: auto;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
 
 .skill-img-py {
-    grid-column: 12;
+    grid-column: auto;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
 }
 
 .skill-img-fl {
-    grid-column: 13;
+    justify-content: center;
+    grid-column: auto;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
@@ -236,7 +235,8 @@ footer {
 
 
 .copyright {
-    grid-column: 8 / 15;
+    grid-row: 2;
+    grid-column: span 7;
     color: #F0F8FF;
     align-items: center;
 }
