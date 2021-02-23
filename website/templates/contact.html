@@ -32,6 +32,19 @@
               {{ form.email }}
             {% endif %}
         </div>
+        <div class="subject">
+          {{ form.subject.label }}
+            {% if form.subject.errors %}
+              {{ form.subject }}
+              <div class="error">
+                {% for error in form.subject.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.subject }}
+            {% endif %}
+        </div>
         <div class="body">
           {{ form.body.label }}
             {% if form.body.errors %}
