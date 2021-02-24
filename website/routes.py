@@ -2,6 +2,7 @@ from website import app, mail
 from flask import render_template, request, redirect, url_for
 from website.forms import ContactForm
 from flask_mail import Message
+import sqlite3
 
 
 @app.route('/')
@@ -17,6 +18,7 @@ def contact():
             or "Internship Opportunity":
         if request.method == "POST":
             if form.validate_on_submit():
+                send_email(form)
                 return redirect(url_for('home'))
     return render_template('contact.html', form=form, title='Contact')
 
@@ -27,6 +29,10 @@ def send_email(form):
                   recipients=['rafael.pietri@gmail.com'])
     msg.body = f'Hello my name is {form.name.data},\n{form.body.data}'
     mail.send(msg)
+
+
+def db(form):
+    pass
 
 
 @app.route('/projects')
