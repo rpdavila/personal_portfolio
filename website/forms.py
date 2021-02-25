@@ -9,8 +9,8 @@ class ContactForm(FlaskForm):
                        validators=[DataRequired(), length(min=4)])
     email = EmailField('Email',
                        validators=[Email(), DataRequired()])
-    subject = SelectField('Subject', choices=("Constructive Feedback", "Send Resume for Possible Hire",
-                                              "Internship Opportunity", "Testimonial"),
+    subject = SelectField('Subject', choices=("--Select Subject--", "Constructive Feedback",
+                                              "Send Resume for Possible Hire", "Internship Opportunity", "Testimonial"),
                           validators=[DataRequired()])
 
     body = TextAreaField('Message',
