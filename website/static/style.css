@@ -11,10 +11,10 @@ body {
 
 /*Nav Bar*/
 .link_list {
+    position: static;
     display: inline-flex;
     justify-content: flex-end;
     align-content: space-around;
-    position: sticky;
     list-style-type: none;
     width: 100%;
     margin: 0;
@@ -169,7 +169,6 @@ textarea {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
-
 }
 
 #submit {
@@ -185,21 +184,26 @@ textarea {
 /*projects page*/
 
 .project-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
-    align-content: center;
-    flex-flow: wrap;
-    height: 100%;
-    width: 90%;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin: 50px 50px 50px 50px;
 }
 
 .card {
+    justify-content: center;
+    height: 100%;
+    width: 100%;
     background-color: #F0F8FF;
     border-radius: 10px;
-    height: 600px;
-    width: 300px
+}
+
+/*Center all divs from the card element*/
+.card > div {
+    display:flex;
+    justify-content: center;
 }
 /*footer*/
 
