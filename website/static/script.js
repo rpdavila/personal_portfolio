@@ -4,7 +4,7 @@ let card_3 = document.getElementById('card-3')
 let card_4 = document.getElementById('card-4')
 
 card_1.addEventListener('click', function() {
-    window.location.href = "https://github.com/rpdavila/Personal_Portfolio";
+    window.location.href = "https://github.com/rpdavila/personal_portfolio";
 } )
 
 card_2.addEventListener('click', function() {

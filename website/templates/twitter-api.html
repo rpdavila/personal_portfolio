@@ -18,10 +18,31 @@
                 {{ form.country }}
             {% endif %}
           <div class="button">
-              {{ form.submit }}
+              {{ form.submit1 }}
           </div>
         </div>
       </form>
     </fieldset>
+    </div>
+    <form method="POST" action="">
+    <div> {{ form.submit2 }}</div>
+    </form>
+    <div class="table-container">
+      <table class="twitter-table">
+        <tr>
+          <th>Geo Location</th>
+          <th>Trends</th>
+          <th>Trend Volume</th>
+          <th>Date-Pulled</th>
+        </tr>
+        {% for item in fetch_data %}
+          <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+          </tr>
+        {% endfor %}
+      </table>
     </div>
 {% endblock content %}

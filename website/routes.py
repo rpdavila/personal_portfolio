@@ -1,7 +1,8 @@
 from website import app, mail
 from flask import render_template, request, redirect, url_for
 from website.forms import ContactForm, TwitterForm
-from website.dbqueries import insert_from_contact_form, grab_country_data, get_data_to_html_table
+from website.dbqueries import (insert_from_contact_form, grab_country_data, get_data_to_html_table,
+                               delete_records_in_twitter_trends)
 from twitter_api import trends_available, retrieve_data
 from flask_mail import Message
 
@@ -39,13 +40,18 @@ def projects():
 @app.route('/twitter-api', methods=["GET", "POST"])
 def twitter():
     form = TwitterForm()
+    fetch_data = get_data_to_html_table()
     trends_available()
     for country in grab_country_data():
         data = str(country[0])
         form.country.choices += [(data, data)]
     if request.method == "POST":
-        form.validate_on_submit()
-        field_data = form.country.data
-        retrieve_data(field_data)
-        get_data_to_html_table()
-    return render_template("twitter-api.html", form=form, title="Twitter-API")
+        if form.submit1:
+            form.validate_on_submit()
+            delete_records_in_twitter_trends()
+            field_data = form.country.data
+            retrieve_data(field_data)
+        elif form.submit2:
+            form.validate_on_submit()
+            fetch_data = fetch_data
+    return render_template("twitter-api.html", form=form, fetch_data=fetch_data, title="Twitter-API")

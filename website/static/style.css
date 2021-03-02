@@ -229,7 +229,22 @@ textarea {
 }
 
 /*card animation*/
+  /*add card animation here*/
+/*twitter page*/
 
+table {
+    border: black solid 3px;
+}
+
+th {
+    font-size: large;
+    border-bottom: black solid 2px;
+}
+
+td {
+    font-size: medium;
+    border-bottom: black solid 1px;
+}
 /*footer*/
 
 footer {
