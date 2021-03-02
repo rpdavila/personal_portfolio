@@ -1,9 +1,9 @@
 from website import app, mail
 from flask import render_template, request, redirect, url_for
-from website.forms import ContactForm
+from website.forms import ContactForm, TwitterForm
+from website.dbqueries import insert_from_contact_form, grab_country_data, get_data_to_html_table
+from twitter_api import trends_available, retrieve_data
 from flask_mail import Message
-import sqlite3
-from sqlite3 import Error
 
 
 @app.route('/')
@@ -17,7 +17,7 @@ def contact():
     form = ContactForm()
     if request.method == "POST":
         if form.validate_on_submit():
-            db_connect(form)
+            insert_from_contact_form(form)
             send_email(form)
             return redirect(url_for('home'))
     return render_template('contact.html', form=form, title='Contact')
@@ -31,18 +31,21 @@ def send_email(form):
     mail.send(msg)
 
 
-def db_connect(form):
-    try:
-        conn = sqlite3.connect('identifier.sqlite')
-        cur = conn.cursor()
-        insert_query = "INSERT INTO contact(name,email,subject,body) VALUES(?,?,?,?)"
-        cur.execute(insert_query, (form.name.data, form.email.data, form.subject.data, form.body.data))
-        conn.commit()
-        conn.close()
-    except Error as e:
-        print(e)
-
-
 @app.route('/projects')
 def projects():
     return render_template('projects.html', title='Projects')
+
+
+@app.route('/twitter-api', methods=["GET", "POST"])
+def twitter():
+    form = TwitterForm()
+    trends_available()
+    for country in grab_country_data():
+        data = str(country[0])
+        form.country.choices += [(data, data)]
+    if request.method == "POST":
+        form.validate_on_submit()
+        field_data = form.country.data
+        retrieve_data(field_data)
+        get_data_to_html_table()
+    return render_template("twitter-api.html", form=form, title="Twitter-API")

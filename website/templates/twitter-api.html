@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="form-wrapper">
+    <fieldset>
+    <legend class="legend">Twitter API</legend>
+      <form method="POST" action="">
+          {{ form.csrf_token }}
+        <div class="subject">
+          {{ form.country.label }}
+            {% if form.country.errors %}
+              {{ form.country }}
+              <div class="error">
+                {% for error in form.country.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+                {{ form.country }}
+            {% endif %}
+          <div class="button">
+              {{ form.submit }}
+          </div>
+        </div>
+      </form>
+    </fieldset>
+    </div>
+{% endblock content %}

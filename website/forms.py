@@ -17,3 +17,10 @@ class ContactForm(FlaskForm):
                          validators=[DataRequired(), length(min=4)])
 
     submit = SubmitField('Submit')
+
+
+class TwitterForm(FlaskForm):
+    country = SelectField('Geo Location',
+                          choices=[],
+                          validators=[DataRequired()])
+    submit = SubmitField('Submit')
