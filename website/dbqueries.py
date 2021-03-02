@@ -31,6 +31,6 @@ def get_data_to_html_table():
         curs = conn.cursor()
         query = "SELECT country,name,url,volume,date FROM main.twitter_trends"
         curs.execute(query)
-        return curs.fetchall()
+        data = curs.fetchall()
     except Error as e:
         print(e)
