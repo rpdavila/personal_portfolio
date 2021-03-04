@@ -24,5 +24,4 @@ class TwitterForm(FlaskForm):
                           choices=[],
                           validators=[DataRequired()])
     submit1 = SubmitField('Populate Database')
-    submit2 = SubmitField('Retrieve Data')
-    submit3 = SubmitField('Populate List')
+    submit2 = SubmitField('Insert data into table')
