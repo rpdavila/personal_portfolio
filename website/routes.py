@@ -5,7 +5,6 @@ from website.dbqueries import (insert_from_contact_form, grab_country_data, get_
                                delete_records_in_twitter_trends)
 from twitter_api import trends_available, retrieve_data
 from flask_mail import Message
-import time
 
 
 @app.route('/')
