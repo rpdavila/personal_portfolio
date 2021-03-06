@@ -3,8 +3,10 @@ from flask import render_template, request, redirect, url_for
 from website.forms import ContactForm, TwitterForm
 from website.dbqueries import (insert_from_contact_form, grab_country_data, get_data_to_html_table,
                                delete_records_in_twitter_trends)
+from website.organize_twitter_data import graph
 from twitter_api import trends_available, retrieve_data
 from flask_mail import Message
+from os import path
 
 
 @app.route('/')
@@ -41,6 +43,7 @@ def projects():
 def twitter():
     form = TwitterForm()
     fetch_data = get_data_to_html_table()
+    visualize_data = graph()
     trends_available()
     for country in grab_country_data():
         data = str(country[0])
@@ -54,4 +57,8 @@ def twitter():
         elif form.submit2:
             form.validate_on_submit()
             fetch_data = fetch_data
-    return render_template("twitter-api.html", form=form, fetch_data=fetch_data, title="Twitter-API")
+        elif form.submit3:
+            form.validate_on_submit()
+            visualize_data = visualize_data
+    return render_template("twitter-api.html", form=form, fetch_data=fetch_data, visualize_data=visualize_data,
+                           title="Twitter-API")

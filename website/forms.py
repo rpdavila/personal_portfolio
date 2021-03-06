@@ -25,3 +25,4 @@ class TwitterForm(FlaskForm):
                           validators=[DataRequired()])
     submit1 = SubmitField('Populate Database')
     submit2 = SubmitField('Insert data into table')
+    submit3 = SubmitField('Show Graph')
