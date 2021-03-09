@@ -29,7 +29,7 @@ def get_data_to_html_table():
     try:
         conn = sqlite3.connect('db.sqlite')
         curs = conn.cursor()
-        query = "SELECT country,name,volume,date FROM main.twitter_trends ORDER BY volume DESC"
+        query = "SELECT country,name,volume,date FROM main.twitter_trends WHERE volume IS NOT NULL ORDER BY volume DESC"
         curs.execute(query)
         return curs.fetchall()
     except Error as e:
@@ -43,5 +43,6 @@ def delete_records_in_twitter_trends():
         query = "DELETE FROM main.twitter_trends"
         curs.execute(query)
         conn.commit()
+        conn.close()
     except Error as e:
         print(e)

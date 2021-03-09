@@ -6,7 +6,7 @@
             <div class="form-wrapper" id="twitter-form-1">
             <fieldset id="form1">
             <legend class="legend">Twitter API</legend>
-              <form method="POST" action="">
+              <form method="POST" action="{{ url_for('twitter')}}">
                   {{ form.csrf_token }}
                 <div class="subject">
                   {{ form.country.label }}
@@ -21,25 +21,9 @@
                         {{ form.country }}
                     {% endif %}
                   <div class="button">
-                      {{ form.submit1 }}
+                    {{ form.submit1 }}
                   </div>
                 </div>
-              </form>
-            </fieldset>
-            </div>
-            <div class="button-2-container">
-            <fieldset id="form2">
-            <legend class="legend">Retrieve Data</legend>
-              <form id="button-2" method="POST" action="">
-                {{ form.submit2 }}
-              </form>
-            </fieldset>
-            </div>
-            <div class="button-3-container">
-            <fieldset id=" form3">
-            <legend class="legend">Visualize Data</legend>
-              <form id="button-3" method="POST" action="">
-                {{ form.submit3 }}
               </form>
             </fieldset>
             </div>
@@ -63,7 +47,7 @@
               </table>
             </div>
             <div class="graph">
-                <img id="graph-data" src="data:image/png;base64,{{ visualize_data }}">
+                <img id="graph-data" src="data:image/png;base64,{{ visualize_data }}" alt="graph">
             </div>
         </div>
     </div>

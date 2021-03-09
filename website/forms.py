@@ -21,8 +21,6 @@ class ContactForm(FlaskForm):
 
 class TwitterForm(FlaskForm):
     country = SelectField('Geo Location',
-                          choices=[],
-                          validators=[DataRequired()])
-    submit1 = SubmitField('Populate Database')
-    submit2 = SubmitField('Insert data into table')
-    submit3 = SubmitField('Show Graph')
+                          choices=[])
+    submit1 = SubmitField('Retrieve data')
+    submit2 = SubmitField('Delete data')

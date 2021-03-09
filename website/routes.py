@@ -6,7 +6,7 @@ from website.dbqueries import (insert_from_contact_form, grab_country_data, get_
 from website.organize_twitter_data import graph
 from twitter_api import trends_available, retrieve_data
 from flask_mail import Message
-from os import path
+import time
 
 
 @app.route('/')
@@ -42,23 +42,20 @@ def projects():
 @app.route('/twitter-api', methods=["GET", "POST"])
 def twitter():
     form = TwitterForm()
+    trends_available()
     fetch_data = get_data_to_html_table()
     visualize_data = graph()
-    trends_available()
+    delete_records_in_twitter_trends()
     for country in grab_country_data():
         data = str(country[0])
         form.country.choices += [(data, data)]
     if request.method == "POST":
-        if form.submit1:
-            form.validate_on_submit()
-            delete_records_in_twitter_trends()
+        if form.validate_on_submit():
             field_data = form.country.data
             retrieve_data(field_data)
-        elif form.submit2:
-            form.validate_on_submit()
+            time.sleep(12)
             fetch_data = fetch_data
-        elif form.submit3:
-            form.validate_on_submit()
+            time.sleep(5)
             visualize_data = visualize_data
     return render_template("twitter-api.html", form=form, fetch_data=fetch_data, visualize_data=visualize_data,
                            title="Twitter-API")
