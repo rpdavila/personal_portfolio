@@ -164,7 +164,7 @@ textarea {
     margin-top: 10px;
 }
 
-.button {
+.button-container {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
@@ -191,7 +191,6 @@ textarea {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     padding: 50px 50px 50px 50px;
 }
@@ -250,24 +249,20 @@ textarea {
     height: 100%;
     width: 100%;
     margin: 50px;
+    grid-auto-flow: row;
 }
 
 /* form is inheriting from contact page*/
 .twitter-form-wrapper {
-    grid-column: 1/4;
-    grid-row: 1/8;
-    display: grid;
-    grid-template-rows:repeat(auto-fit, minmax(105px, 1fr));
-    grid-gap: 20px;
-    align-content: center;
+    grid-column: span 3;
+    grid-row: span 3;
 }
 
 #twitter-form-1 {
     height: 100%;
     width: 100%;
     margin-top: 0;
-    grid-column: 1;
-    grid-row: 1/ span 2;
+    grid-row: span 2;
 }
 
 #form1 {
@@ -284,19 +279,7 @@ textarea {
     margin: 10px 10px;
     font-size: medium;
 }
-/* button 2*/
-.button-2-container {
-    height: 100%;
-    width: 100%;
-    grid-column: 1;
-    grid-row: auto;
-}
-#form2 {
-    display: flex;
-    justify-content: flex-start;
-    height: auto;
-    width: auto;
-}
+
 
 #submit2 {
     background-color: #02334b;
@@ -311,8 +294,9 @@ textarea {
 
 
 .graph {
-    grid-column: 4/span 8;
-    grid-row: 8/ span 5;
+    align-items: center;
+    grid-column: span 9;
+    grid-row: auto;
 }
 
 #graph-data {
@@ -322,13 +306,13 @@ textarea {
 
 .table-container{
     border-radius: 10px;
-    grid-column: 4/ span 8;
-    grid-row: 1/ span 6;
-    overflow: hidden scroll;
-    display: flex;
+    grid-column: span 8;
+    grid-row: span 6;
+    overflow: auto;
     justify-content: center;
-    max-height: 500px;
-    width: 100%;
+    height: auto;
+    min-width: auto;
+
 }
 
 table {

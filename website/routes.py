@@ -6,7 +6,6 @@ from website.dbqueries import (insert_from_contact_form, grab_country_data, get_
 from website.organize_twitter_data import graph
 from twitter_api import trends_available, retrieve_data
 from flask_mail import Message
-import time
 
 
 @app.route('/')
@@ -53,9 +52,7 @@ def twitter():
         if form.validate_on_submit():
             field_data = form.country.data
             retrieve_data(field_data)
-            time.sleep(12)
             fetch_data = fetch_data
-            time.sleep(5)
             visualize_data = visualize_data
     return render_template("twitter-api.html", form=form, fetch_data=fetch_data, visualize_data=visualize_data,
                            title="Twitter-API")
