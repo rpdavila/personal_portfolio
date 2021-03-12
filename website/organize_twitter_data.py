@@ -25,10 +25,3 @@ def graph():
         plt.clf()
         plt.close()
         return plot_url
-
-
-
-
-
-
-
