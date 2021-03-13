@@ -13,4 +13,3 @@ app.config['MAIL_PASSWORD'] = os.getenv('Email_Pass')
 mail = Mail(app)
 
 from website import routes
-
