@@ -4,7 +4,7 @@ from website.forms import ContactForm, TwitterForm
 from website.dbqueries import (insert_from_contact_form, grab_country_data, get_data_to_html_table,
                                delete_records_in_twitter_trends)
 from website.organize_twitter_data import graph
-from twitter_api import retrieve_data, trends_available
+from website.twitter_api import retrieve_data, trends_available
 from flask_mail import Message
 
 

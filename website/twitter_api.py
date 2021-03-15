@@ -1,8 +1,9 @@
-import os
-import tweepy
 import datetime
+import os
 import sqlite3
 from sqlite3 import Error
+
+import tweepy
 
 consumer_key = os.getenv("twitter_consumer_key")
 secret_key = os.getenv("twitter_secret_key")
