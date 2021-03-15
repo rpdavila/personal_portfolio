@@ -18,11 +18,14 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 # Function that grabs the name and country id of trending data
 def trends_available():
-    trending = api.trends_available()
-    for trend in trending:
-        trend_name = trend['name']
-        trend_woeid = trend['woeid']
-        store_data(trend_name, trend_woeid)
+    try:
+        trending = api.trends_available()
+        for trend in trending:
+            trend_name = trend['name']
+            trend_woeid = trend['woeid']
+            store_data(trend_name, trend_woeid)
+    except tweepy.TweepError as e:
+        print(e)
 
 
 # store data into db table twitter_trends_available which will grab the country name and country id
