@@ -17,7 +17,7 @@ card_3.addEventListener('click', function() {
 } )
 
 card_4.addEventListener('click', function() {
-    window.location.href = "http://127.0.0.1:5000/twitter-api"
+    window.location.href = "http://192.168.1.6:5000/twitter-api"
 })
 
 
