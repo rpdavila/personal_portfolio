@@ -72,6 +72,7 @@ body {
 
 .description {
     max-height: 500px;
+    width: 100%;
 }
 
 .description section p {
@@ -102,8 +103,8 @@ body {
 
 .form-wrapper {
     margin-top: 100px;
-    height: 500px;
-    width: 50%;
+    height: auto;
+    width: auto;
 
 }
 
@@ -185,7 +186,9 @@ textarea {
 .project_background {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("webdesign.jpg") no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
+    width: auto;
 }
 .project-grid {
     display: grid;
@@ -346,25 +349,27 @@ tr:nth-child(odd) {
 /*footer*/
 
 footer {
+    margin-top: auto;
 	position: relative;
 	bottom: 0;
-	width: 100%;
+	width: auto;
     height: fit-content;
     background-color: #02334B ;
 }
 .footer-container {
     display: grid;
     justify-content: center;
-    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     align-items: center;
+    padding: 0 500px 0 500px;
     grid-gap: 2px;
     height: 110px;
-    width: 100%;
+    width: auto;
 }
 
 /*footer logos*/
 .skill-img-html {
-    grid-column: 2;
+    grid-column: auto;
     background-color: #8EBDD4;
     border-radius: 10px;
     padding: 10px;
@@ -401,7 +406,7 @@ footer {
 
 .copyright {
     grid-row: 2;
-    grid-column: span 7;
+    grid-column: span 4;
     color: #f0f8ff;
     align-items: center;
 }
