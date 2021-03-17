@@ -1,14 +1,16 @@
 import datetime
-import os
 import sqlite3
 from sqlite3 import Error
-
 import tweepy
+import json
 
-consumer_key = os.getenv("twitter_consumer_key")
-secret_key = os.getenv("twitter_secret_key")
-access_token = os.getenv("twitter_access_token")
-secret_token = os.getenv("twitter_secret_access_token")
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
+
+consumer_key = config.get("twitter_consumer_key")
+secret_key = config.get("twitter_secret_key")
+access_token = config.get("twitter_access_token")
+secret_token = config.get("twitter_secret_access_token")
 
 auth = tweepy.OAuthHandler(consumer_key, secret_key)
 auth.set_access_token(access_token, secret_token)
