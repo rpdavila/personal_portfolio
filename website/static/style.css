@@ -349,6 +349,8 @@ tr:nth-child(odd) {
 /*footer*/
 
 footer {
+    display: flex;
+    justify-content: center;
     margin-top: auto;
 	position: relative;
 	bottom: 0;
@@ -359,12 +361,12 @@ footer {
 .footer-container {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
     align-items: center;
-    padding: 0 500px 0 500px;
+    align-content: center;
     grid-gap: 2px;
-    height: 110px;
-    width: auto;
+    height: fit-content;
+    width: 350px;
 }
 
 /*footer logos*/
@@ -408,5 +410,5 @@ footer {
     grid-row: 2;
     grid-column: span 4;
     color: #f0f8ff;
-    align-items: center;
+    justify-content: center;
 }
