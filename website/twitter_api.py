@@ -32,7 +32,7 @@ def store_data(trend_name, trend_woeid):
     try:
         conn = sqlite3.connect('db.sqlite')
         cur = conn.cursor()
-        insert_query = 'INSERT OR Ignore INTO main.country_id(country, woeid) VALUES (?,?)'
+        insert_query = "INSERT OR IGNORE INTO main.country_id(country, woeid) VALUES (?,?)"
         cur.execute(insert_query, (trend_name, trend_woeid))
         conn.commit()
         conn.close()
