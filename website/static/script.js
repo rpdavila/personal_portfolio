@@ -17,7 +17,7 @@ card_3.addEventListener('click', function() {
 } );
 
 card_4.addEventListener('click', function() {
-    window.location.href = "http://rpdavila.com/twitter-api";
+    window.location.href = "http://www.rpdavila.com/twitter-api";
 } );
 
 
