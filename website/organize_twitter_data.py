@@ -9,7 +9,7 @@ from os import path
 
 def graph():
     img = io.BytesIO()
-    conn = sql.connect(path.join('D:\\portfolio\\db.sqlite'))
+    conn = sql.connect('db.sqlite')
     df = pd.read_sql('SELECT name,volume FROM twitter_trends ORDER BY volume DESC', conn)
     if df.empty:
         return None
