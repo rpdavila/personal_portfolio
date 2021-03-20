@@ -3,7 +3,7 @@ from flask import Flask
 from flask_mail import Mail
 
 app = Flask(__name__, template_folder='./templates')
-app.config['SECRET_KEY'] = os.getenv('portfolio')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
