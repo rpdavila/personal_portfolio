@@ -54,7 +54,6 @@ body {
     flex-flow: wrap;
     align-content: center;
     justify-content: center;
-    font-family: 'Dancing Script', cursive;
     font-size: 4rem;
     margin-top: 20px;
     text-shadow: 1px 1px black;
@@ -78,8 +77,8 @@ body {
 .description section p {
     display: flex;
     flex-flow: wrap;
-    justify-content: flex-start;
-    margin: 5px;
+    justify-content: center;
+    margin: 50px;
     font-size: 2rem;
     color: #F0F8FF;
 }
