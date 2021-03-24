@@ -368,46 +368,9 @@ footer {
     width: 350px;
 }
 
-/*footer logos*/
-.skill-img-html {
-    grid-column: auto;
-    background-color: #8EBDD4;
-    border-radius: 10px;
-    padding: 10px;
-}
-.skill-img-css {
-    grid-column: auto;
-    background-color: #8EBDD4;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.skill-img-js {
-    grid-column: auto;
-    background-color: #8EBDD4;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.skill-img-py {
-    grid-column: auto;
-    background-color: #8EBDD4;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.skill-img-fl {
-    justify-content: center;
-    grid-column: auto;
-    background-color: #8EBDD4;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-
 .copyright {
+    justify-content: center;
     grid-row: 2;
     grid-column: span 4;
     color: #f0f8ff;
-    justify-content: center;
 }

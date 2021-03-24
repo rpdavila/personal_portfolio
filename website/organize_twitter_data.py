@@ -4,7 +4,6 @@ from matplotlib import pyplot as plt
 import sqlite3 as sql
 import io
 import base64
-from os import path
 
 
 def graph():
