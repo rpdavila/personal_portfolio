@@ -17,7 +17,7 @@ card_3.addEventListener('click', function() {
 } );
 
 card_4.addEventListener('click', function() {
-    window.location.href = "http://localhost:5000/twitter-api";
+    window.location.href = "https://github.com/rpdavila/twitter_analytics";
 } );
 
 
