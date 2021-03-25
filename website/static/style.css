@@ -229,6 +229,17 @@ textarea {
     padding: 0 10px 0 10px;
 }
 
+#submit3 {
+    background-color: #02334b;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: auto;
+    margin: 10px 10px;
+    font-size: medium;
+}
+
 /*card animation*/
   /*add card animation here*/
 /*twitter page*/

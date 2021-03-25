@@ -45,9 +45,10 @@
             <p>Choose a geographical location from the pull down menu and get the latest trending data from twitter
                 <br><br><strong>Progress:</strong> Complete</p>
           </div>
-          <div id="code-snippet">
-            <p><small><a href="https://github.com/rpdavila/personal_portfolio/blob/master/website/organize_twitter_data.py">Graphing Code</a></small><br>
-            <small><a href="https://github.com/rpdavila/personal_portfolio/blob/master/website/twitter_api.py">Twitter-API</a></small></p>
+          <div id="interaction">
+            <form method="post" action="{{ url_for("twitter") }}">
+            {{ form.submit3 }}
+            </form>
           </div>
         </div>
       </div>

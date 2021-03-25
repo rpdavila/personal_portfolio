@@ -24,3 +24,7 @@ class TwitterForm(FlaskForm):
                           choices=[])
     submit1 = SubmitField('Retrieve data')
     submit2 = SubmitField('Delete data')
+
+
+class ProjectForm(FlaskForm):
+    submit3 = SubmitField("Project-Interaction")

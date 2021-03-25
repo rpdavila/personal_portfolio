@@ -1,6 +1,6 @@
 from website import app, mail
 from flask import render_template, request, redirect, url_for
-from website.forms import ContactForm, TwitterForm
+from website.forms import ContactForm, TwitterForm, ProjectForm
 from website.dbqueries import (insert_from_contact_form, grab_country_data, get_data_to_html_table,
                                delete_records_in_twitter_trends)
 from website.organize_twitter_data import graph
@@ -33,9 +33,12 @@ def send_email(form):
     mail.send(msg)
 
 
-@app.route('/projects')
+@app.route('/projects', methods=["GET", "POST"])
 def projects():
-    return render_template('projects.html', title='Projects')
+    form = ProjectForm()
+    if form.validate_on_submit():
+        return redirect(url_for("twitter"))
+    return render_template('projects.html', form=form, title='Projects')
 
 
 @app.route('/twitter-api', methods=["GET", "POST"])
