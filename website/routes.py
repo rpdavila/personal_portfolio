@@ -29,7 +29,7 @@ def contact():
 def send_email(form):
     msg = Message(subject=f'{form.subject.data}',
                   sender=os.getenv("Email_User"),
-                  recipients=['rpdavila@gmail.com'])
+                  recipients=['rpietridavila@gmail.com'])
     msg.body = f'This message is from: {form.name.data},\n body: {form.body.data}'
     mail.send(msg)
 
