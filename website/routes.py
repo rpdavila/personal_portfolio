@@ -30,7 +30,7 @@ def send_email(form):
     msg = Message(subject=f'{form.subject.data}',
                   sender=os.getenv("Email_User"),
                   recipients=['rpietridavila@gmail.com'])
-    msg.body = f'This message is from: {form.name.data},\n body: {form.body.data}'
+    msg.body = f'This message is from: {form.name.data},\n body: {form.body.data}. \n Email: {form.email.data}.'
     mail.send(msg)
 
 
