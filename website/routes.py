@@ -1,3 +1,4 @@
+import os
 from website import app, mail
 from flask import render_template, request, redirect, url_for
 from website.forms import ContactForm, TwitterForm, ProjectForm
@@ -27,9 +28,9 @@ def contact():
 
 def send_email(form):
     msg = Message(subject=f'{form.subject.data}',
-                  sender=f'{form.email.data}',
-                  recipients=['rafael.pietri@gmail.com'])
-    msg.body = f'Hello my name is {form.name.data},\n{form.body.data}'
+                  sender=os.getenv("Email_User"),
+                  recipients=['rpdavila@gmail.com'])
+    msg.body = f'This message is from: {form.name.data},\n body: {form.body.data}'
     mail.send(msg)
 
 
