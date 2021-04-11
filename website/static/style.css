@@ -18,7 +18,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #02334B;
+    background-color: #02334b;
 }
 
 .nav-links {
@@ -43,7 +43,7 @@ body {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("homepage.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("homepage.jpg");
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -61,7 +61,7 @@ body {
 }
 
 /*home-page body*/
-.flex {
+.container {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
@@ -74,7 +74,7 @@ body {
     width: 100%;
 }
 
-.description section p {
+.description {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
@@ -95,63 +95,54 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("planning.jpg") no-repeat, fixed;
     background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("collaboration.jpg") no-repeat;
-    height: 855px;
+    height: 800px;
 }
+.flashes {
+    padding: 0;
+    margin: 0;
+}
+.success {
+    display: flex;
+    justify-content: center;
+    background-color: darkolivegreen;
+    color: #F0F8FF;
+    font-size: medium;
+    padding: 10px;
 
-.LI-profile-badge {
-    height: auto;
-    width: auto;
 }
 
 .form-wrapper {
     margin-top: 100px;
     height: auto;
-    width: auto;
-
-}
-
-fieldset {
-    background-color: #8ebdd4;
-    border-radius: 30px;
-    border-style: solid;
-    border-color: #02334B;
-}
-
-legend {
-    border-radius: 10px;
-    background-color: #02334b;
-    font-size: 2rem;
-    color: #f0f8ff;
-    box-shadow: 5px 5px 5px black;
-    margin: 10px 10px;
-    padding: 10px;
+    width: 45%;
 }
 
 label {
     font-size: 2rem;
-    color: #306d9e;
+    color: #f0f8ff;
 }
 
 input[type=text], input[type=email], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+
 }
 
 .name {
@@ -185,13 +176,17 @@ textarea {
     margin: 10px 10px;
     font-size: medium;
 }
+/*button Hover*/
+#submit:hover {
+  background-color: #8EBDD4;
+}
 
 /*projects page*/
 .project_background {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("webdesign.jpg") no-repeat;
     background-size: cover;
     min-height: 100vh;
-    max-height: fit-content;
+    max-height: fit-content ;
     width: auto;
 }
 .project-grid {
@@ -246,7 +241,8 @@ textarea {
 }
 
 /*card animation*/
-  /*add card animation here*/
+.card { transition: all .2s ease-in-out; }
+.card:hover { transform: scale(1.1); }
 /*twitter page*/
 
 .twitter-content-background {
@@ -255,22 +251,17 @@ textarea {
     align-content: center;
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("data.jpg") no-repeat;
-    height: 100%;
+    height: 90vh;
     width: 100%;
     background-size: cover;
 }
 .twitter-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 10px;
     align-content: center;
     min-height: 500px;
-    width: 100%;
+    width: 70%;
     margin: 50px;
-    grid-auto-flow: row;
 }
 
-/* form is inheriting from contact page*/
 .twitter-form-wrapper {
     grid-column: span 3;
     grid-row: span 3;
@@ -299,21 +290,9 @@ textarea {
 }
 
 
-#submit2 {
-    background-color: #02334b;
-    color: #ffffff;
-    border-radius: 10px;
-    border: none;
-    height: 40px;
-    width: auto;
-    margin: 10px 10px;
-    font-size: medium;
-}
-
-
 .graph {
     align-items: center;
-    grid-column: span 9;
+    grid-column: span 8;
     grid-row: auto;
 }
 
@@ -322,15 +301,10 @@ textarea {
     width: 100%;
 }
 
-.table-container{
-    border-radius: 10px;
-    grid-column: span 8;
-    grid-row: span 6;
+.table-container {
     overflow: auto;
     justify-content: center;
     height: auto;
-    min-width: auto;
-
 }
 
 table {
@@ -339,7 +313,6 @@ table {
 }
 
 th {
-    position: sticky;
     text-align: center;
     font-size: 20px;
     color: #F0F8FF

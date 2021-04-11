@@ -22,8 +22,7 @@ class ContactForm(FlaskForm):
 class TwitterForm(FlaskForm):
     country = SelectField('Geo Location',
                           choices=[])
-    submit1 = SubmitField('Retrieve data')
-    submit2 = SubmitField('Delete data')
+    submit1 = SubmitField('Retrieve & Display data')
 
 
 class ProjectForm(FlaskForm):

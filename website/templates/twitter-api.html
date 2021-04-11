@@ -4,8 +4,6 @@
         <div class="twitter-content">
           <div class="twitter-form-wrapper">
             <div class="form-wrapper" id="twitter-form-1">
-            <fieldset id="form1">
-            <legend class="legend">Twitter API</legend>
               <form method="POST" action="{{ url_for('twitter')}}">
                   {{ form.csrf_token }}
                 <div class="subject">
@@ -22,34 +20,11 @@
                     {% endif %}
                   <div class="button-container">
                     {{ form.submit1 }}
-                    <button id="submit2" onclick="location.reload()">Display Data</button>
                   </div>
                 </div>
               </form>
-            </fieldset>
             </div>
           </div>
-            <div class="table-container">
-              <table class="twitter-table">
-                <tr>
-                  <th>Geo Location</th>
-                  <th>Trend Name</th>
-                  <th>Trend Volume</th>
-                  <th>Date-Pulled</th>
-                </tr>
-                {% for item in fetch_data %}
-                  <tr>
-                    <td>{{ item[0] }}</td>
-                    <td>{{ item[1] }}</td>
-                    <td>{{ item[2] }}</td>
-                    <td>{{ item[3] }}</td>
-                  </tr>
-                {% endfor %}
-              </table>
-            </div>
-            <div class="graph">
-                <img id="graph-data" src="data:image/png;base64,{{ visualize_data }}" alt="graph">
-            </div>
         </div>
     </div>
 {% endblock content %}

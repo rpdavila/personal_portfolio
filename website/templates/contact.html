@@ -2,8 +2,6 @@
 {% block content %}
 <div class="contact_background">
   <div class="form-wrapper">
-    <fieldset>
-    <legend class="legend">Contact Me</legend>
       <form method="POST" action="">
           {{ form.csrf_token }}
         <div class="name">
@@ -62,7 +60,6 @@
           {{ form.submit }}
         </div>
       </form>
-    </fieldset>
   </div>
 </div>
 {% endblock content %}
