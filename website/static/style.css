@@ -243,6 +243,7 @@ textarea {
 #submit3:hover {
     background-color: #8EBDD4;
     cursor: pointer;
+    color: #02334b;
 }
 
 /*card animation*/
@@ -383,4 +384,5 @@ footer {
 #OR-WebApp:hover {
     background-color: #8EBDD4;
     cursor: pointer;
+    color: #02334b;
 }
