@@ -1,5 +1,6 @@
 import os
-from website import app, mail
+from website.config import mail
+from website import app
 from flask import render_template, request, redirect, url_for, flash
 from website.forms import ContactForm, TwitterForm, ProjectForm
 from website.dbqueries import (insert_from_contact_form, grab_country_data, get_data_to_html_table,

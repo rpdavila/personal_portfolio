@@ -33,7 +33,8 @@ body {
 }
 
 /* Change the link color to blue on hover */
-.nav-links:hover {
+.nav-links:hover,
+.nav-links:active {
   background-color: #8EBDD4;
 }
 
@@ -43,7 +44,7 @@ body {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("homepage.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("homepage.jpg"), center;
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -97,7 +98,8 @@ body {
     align-content: center;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("planning.jpg") no-repeat, fixed;
     background-size: cover;
-    height: 800px;
+    width: 100%;
+    height: 100%;
 }
 .flashes {
     padding: 0;
@@ -115,8 +117,9 @@ body {
 
 .form-wrapper {
     margin-top: 100px;
-    height: auto;
     width: 45%;
+    height: auto;
+    box-sizing: border-box;
 }
 
 label {
@@ -385,4 +388,13 @@ footer {
     background-color: #8EBDD4;
     cursor: pointer;
     color: #02334b;
+}
+
+@media only screen and (max-width: 700px){
+    .form-wrapper {
+    margin-top: 100px;
+    width: 80%;
+    height: auto;
+    box-sizing: border-box;
+}
 }
