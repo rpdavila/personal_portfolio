@@ -12,18 +12,18 @@ secret_token = os.getenv("twitter_secret_access_token")
 auth = tweepy.OAuthHandler(consumer_key, secret_key)
 auth.set_access_token(access_token, secret_token)
 
-api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
 
 # Function that grabs the name and country id of trending data
 def trends_available():
     try:
-        trending = api.trends_available()
+        trending = api.available_trends()
         for trend in trending:
             trend_name = trend['name']
             trend_woeid = trend['woeid']
             store_data(trend_name, trend_woeid)
-    except tweepy.TweepError as e:
+    except Error as e:
         print(e)
 
 
@@ -56,13 +56,13 @@ def retrieve_data(field_data):
             woeid = woeid[0]
             country = field_data
             get_twitter_trends_in_specific_locations(country, woeid)
-    except Error as e:
+    except tweepy.TweepyException as e:
         print(e)
 
 
 def get_twitter_trends_in_specific_locations(country, woeid):
     try:
-        trending_places = api.trends_place(woeid)
+        trending_places = api.get_place_trends(woeid)
         for data in trending_places:
             for trends in data['trends']:
                 name = trends['name']
@@ -71,8 +71,8 @@ def get_twitter_trends_in_specific_locations(country, woeid):
                 volume = trends['tweet_volume']
                 date = datetime.datetime.now()
                 insert_data_into_twitter_trends(country, name, url, query, volume, date)
-    except tweepy.TweepError as e:
-        print(e.reason)
+    except tweepy.TweepyException as e:
+        print(e)
 
 
 def insert_data_into_twitter_trends(country, name, url, query, volume, date):
